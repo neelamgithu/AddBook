@@ -33,8 +33,8 @@ public class AddBook {
     public static void main(String[] args) {
          System.out.println("Welcome to AddressBook");
         ArrayList<Contact> con = new ArrayList<Contact>();
-
-        public static void add_contact() {
+    }
+        public  void add_contact() {
            // sc.nextLine();// to avoid /n issue in after taking integer as input
             System.out.println("enter first name ");
             String first_name = sc.nextLine();
@@ -56,9 +56,10 @@ public class AddBook {
             Contact cont = new Contact(first_name, last_name, address, city, state, zip, phone_number, email);///class ob created 
              con.add(cont);//built in method 
           }
+        
 
           public static void edit_contact() {
-            /int count = check();//calling check methods
+            int count = check();//calling check methods
     
              if (count == -1) {
                 System.out.println(" invalid name \nplease enter valid name");
@@ -84,6 +85,7 @@ public class AddBook {
                 con.get(count).email = sc.nextLine();
                 System.out.println("updation done successfully");
           }
+        }
           
           public static int check() {
             int count=0;
@@ -112,7 +114,17 @@ public class AddBook {
             }
             return -1;
         }
-     } 
+        public static void remove_contact() {
+            int count = check();//calling check method
+            if (count == -1) {
+                System.out.println(" invalid name \nplease enter valid name");
+    
+            } else {
+                con.remove(count);
+                System.out.println("contact removed successfully!!!");
+            }
+        }
+     
  }
 
     
